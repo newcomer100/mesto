@@ -13,7 +13,7 @@
   padding: 0;
 }
 
-.card__trash {
+.card__trash:hover{
   cursor: pointer;
   opacity: 0.6;
 }
