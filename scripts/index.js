@@ -11,8 +11,6 @@ const jobInput = document.querySelector('.popup__input_field_job')
 const profileJob = document.querySelector('.profile__job')
 
 const cards = document.querySelector('.cards')
-const cardDeleteButton = document.querySelector('.card__trash')
-const cardLikeButton = document.querySelector('.card__like')
 
 const placeNameInput = document.querySelector('.popup__input_place_name')
 const placeLinkInput = document.querySelector('.popup__input_place_link')
@@ -22,6 +20,7 @@ const popup = document.querySelector('.popup')
 
 function openPopup(popup) {
   document.querySelector(`#${popup}`).classList.add('popup_opened');
+  inputInf()
 }
 
 function openPopupImage(popupId, data){
@@ -35,23 +34,6 @@ function removeCard(element) {
   element.closest('.card').remove()
 } 
 
-function likeCard(element) {
-  element.classList.toggle('card__like_active')
-}
-// ставит лайк только после добавления новой карточки//
-function foo(){
-  cards.addEventListener('click', (e) => {
-    const el = e.target
-    if (el.classList.contains('card__like')){
-      likeCard(el) 
-    } 
-    if (el.classList.contains('card__image')){
-      const name = e.target.closest('.card').title.textContent
-      openPopupImage(e.target.dataset.popup, e.target, name)
-    }
-  });
- }
- foo()
 function createCardElement(name, link) {
     const cardElement = cardTemplate.content.cloneNode(true)
     cardElement.querySelector('.card__title').textContent = name
@@ -74,17 +56,12 @@ function generateCards() {
 
 generateCards()
 
-function addCards() {
-    initialCards.push({
-      name: placeNameInput.value,
-      link: placeLinkInput.value,
-      id: count++
-    })
-    generateCards()
-}
+
 
 
 function closePopup(popup){
+  const form = popup.parentNode.querySelector('form')
+  Array.from(form.elements).map(item => item.value = '')
   popup.closest('.popup').classList.remove('popup_opened')
 }
 
@@ -105,7 +82,6 @@ forms.forEach(function(element) {
             savePersonData()
             closePopup(event.target)
         } else if (event.target.closest('#add')) {
-            addCards()
             closePopup(event.target)
             document.forms['addForm'].reset()
         }
@@ -119,6 +95,7 @@ Array.from(popups).forEach(function(element) {
 
 Array.from(closePopupButtons).forEach(function(element) {
     element.addEventListener('click', event => {
+    
         closePopup(event.target)
     });
 });
