@@ -21,9 +21,51 @@
           </div>
           <p class="profile__job">Исследователь океана</p>
       </div>
-      <button class="profile__add-button" type="button" data-popup="add"></button>
+      <button class="profile__add-button" type="button" ></button>
     </section>
     <section class="cards">
+        <div class="card">
+          <img class="card__image" data-popup="image" src="./images/karachaevsk.jpg" alt="Храм">
+          <div class="card__describe">
+              <h2 class="card__title">Карачаевск</h2>
+              <button class="card__like" type="button"></button>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card__image" data-popup="image" src="./images/elbrus.jpg" alt="Храм">
+          <div class="card__describe">
+              <h2 class="card__title">Карачаевск</h2>
+              <button class="card__like" type="button"></button>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card__image" data-popup="image" src="./images/dombay.jpg" alt="Храм">
+          <div class="card__describe">
+              <h2 class="card__title">Карачаевск</h2>
+              <button class="card__like" type="button"></button>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card__image" data-popup="image" src="./images/elbrus.jpg" alt="Храм">
+          <div class="card__describe">
+              <h2 class="card__title">Карачаевск</h2>
+              <button class="card__like" type="button"></button>
+          </div>
+        </div>
+         <div class="card">
+            <img class="card__image" data-popup="image" src="./images/dombay.jpg" alt="Храм">
+            <div class="card__describe">
+                <h2 class="card__title">Карачаевск</h2>
+                <button class="card__like" type="button"></button>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card__image" data-popup="image" src="./images/karachaevsk.jpg" alt="Храм">
+            <div class="card__describe">
+                <h2 class="card__title">Карачаевск</h2>
+                <button class="card__like" type="button"></button>
+            </div>
+          </div>
     </section>        
   </main>  
   <footer class="footer">
@@ -40,34 +82,6 @@
       </form>
   </div>
 </div>
-<div class="popup" id="add">
-  <div class="popup__container">
-    <button class="popup__close" type="button"></button>
-    <h2 class="popup__title">Новое место</h2>
-    <form action="#" class="popup__form" name="formElement" id="addForm">
-        <input placeholder = "Название" type="text" class="popup__input popup__input_place_name" name="placeNameInput">
-        <input placeholder = "Ссылка на картинку" type="text" class="popup__input popup__input_place_link" name="placeLinkInput">
-        <button type="submit" class="popup__submit">Создать</button>
-    </form>
-  </div>
-</div>
-<div class="popup" id="image">
-  <div class="popup__container popup__container_place">
-    <button class="popup__close" type="button"></button>
-    <img class="popup__image" src="./images/karachaevsk.jpg" alt="Картинка">
-    <h2 class="popup__title popup__title_place">Карачаевск</h2>
-  </div>
-</div>
-<template id="template">
-  <div class="card">
-    <img class="card__image" data-popup="image" src=" " alt="Изображение">
-      
-    <div class="card__describe">
-      <h2 class="card__title">Карачаевск</h2>
-      <button class="card__like" type="button"></button>
-    </div>
-    </div>    
-</template>
 <script src="./scripts/cards.js"></script>
 <script src="./scripts/index.js"></script>
 </body>

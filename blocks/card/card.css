@@ -1,4 +1,6 @@
-.card {
-  position: relative;
-  margin: 0;  
+.card{
+    width: 282px;
+    height: 361px;
+    margin: 0;
+    position: relative;
 }
